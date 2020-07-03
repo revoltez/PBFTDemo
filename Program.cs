@@ -14,20 +14,7 @@ namespace Pbft_demo
         {
             Node  node=new Node();
             node.Start_Consensus();
-           
-            
 
         }
-        public static void PrintByteArray(byte[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($"{array[i]:X2}");
-            }
-            Console.WriteLine();
-        }
-    }
-    public static class  Mystringextensions {
-    public static void Dump(this string str)=>Console.WriteLine(str);
     }
 }

@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Timers;
 using System.Threading.Tasks;
-using Message_Types;
+using PBFT_Messages;
 
 namespace Pbft_demo
 {
@@ -55,7 +55,7 @@ namespace Pbft_demo
         public void On_Message_Received(object source,string message,IPAddress ip){
             lock (_locker)
             {
-            Message_Types.pbft_message Message= Newtonsoft.Json.JsonConvert.DeserializeObject<Message_Types.pbft_message>(message); 
+            PBFT_Messages.pbft_message Message= Newtonsoft.Json.JsonConvert.DeserializeObject<PBFT_Messages.pbft_message>(message); 
             System.Console.WriteLine("received a "+Message.message_Type+" message from node :"+ip+"\n message content is : "+Message.message +"with seq number : "+Message.seq);
             // verify the validity of the message and proceed
             Process_Message(Message,ip);
@@ -92,7 +92,7 @@ namespace Pbft_demo
             Temporary_View_Change_messages[Message.view_number].View_Counter ++;
         }
 
-        public bool Process_Message(Message_Types.pbft_message Message,IPAddress Sender_Ip){
+        public bool Process_Message(PBFT_Messages.pbft_message Message,IPAddress Sender_Ip){
          
         if(Verify_Message(Message)){
              Tuple<int,int> Message_Tuple=Tuple.Create(Message.seq,Message.view_number);
@@ -208,14 +208,15 @@ namespace Pbft_demo
 
         private pbft_message Create_Block()
         {
-                Console.WriteLine("waiting for the clinet to send A message");
-                System.Console.WriteLine();    
                 /*the client should send a message from the network and the On_Message_Received will be excuted this must be changed
                 THE primary should contact the client and request for a message and then fom that message create a new block*/
+                
+                Console.WriteLine("waiting for the clinet to send A message");
+                System.Console.WriteLine();    
                 string Block = Console.ReadLine();
                 /* create a new block and this should be in a function with */
 
-                Message_Types.pbft_message new_block=new Message_Types.pbft_message(){
+                PBFT_Messages.pbft_message new_block=new PBFT_Messages.pbft_message(){
                     message=Block,
                     id=configs.PublicKey,
                     message_Type=Message_Type.preprepare,
@@ -247,7 +248,7 @@ namespace Pbft_demo
             return Signature_Match;
         }
 
-        public pbft_message Sign_Message(Message_Types.pbft_message message){
+        public pbft_message Sign_Message(PBFT_Messages.pbft_message message){
             byte[] data=Encoding.UTF8.GetBytes(message.ToString());
             byte[] digest=configs.Ecc.SignData(data,0,data.Length,HashAlgorithmName.SHA256);
             message.digest=digest;

@@ -6,7 +6,7 @@ namespace Pbft_demo
 {
     class Client
     {
-        public void connect(IPAddress address,int port,Message_Types.pbft_message message){
+        public void connect(IPAddress address,int port,PBFT_Messages.pbft_message message){
             TcpClient client =new TcpClient();
             try
             {
