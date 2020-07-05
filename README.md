@@ -1,7 +1,7 @@
-# PBFT-Blockchain
-A permissionned blockchain that uses PBFT as a consensus Algorithm, 
-this is demonstaration of a simple p2p simulated by Docker where each container has its own ip between 4 nodes to run
-the pbft algorithm and construct a blockchain 
+# PBFT in .NET CORE
+Practical byzantine fault tolerance algorithm that can be used to build consensus in asynchronous networks implemented in .NET CORE
+this is demonstaration of a simple p2p network simulated by Docker where each container has its own ip between 4 nodes to run
+the pbft algorithm therefore reaching consensus 
 
 # How to test 
 
