@@ -7,7 +7,9 @@ This algorithm can be used as a consensus algorithm for a blockchain
 
 # Crypto
 
-Elliptic curve cryptography is used to create The public/private key pair 
+Elliptic curve cryptography is used to create The public/private key pair, signing and verifying messages
+
+
 
 # How to test 
 
