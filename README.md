@@ -5,6 +5,9 @@ the pbft algorithm therefore reaching consensus
 
 This algorithm can be used as a consensus algorithm for a blockchain
 
+# Crypto
+
+Elliptic curve cryptography is used to create The public/private key pair 
 
 # How to test 
 
