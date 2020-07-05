@@ -5,6 +5,5 @@ the pbft algorithm therefore reaching consensus
 
 # How to test 
 
-run ./build.sh and configuire the list of ip addresses in configs.cs file ,each ip should represent the container ip ,the default docker ip range is 172.17. 0.0/16 so 
-just typically this will run without modifications 
+run ./build.sh and configuire the list of ip addresses in configs.cs file ,each ip should represent the container ip ,the default docker ip range is 172.17. 0.0/16 so this will typically run without modifications 
 
