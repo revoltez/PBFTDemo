@@ -142,7 +142,7 @@ namespace Pbft_demo
                     System.Console.WriteLine("prepare counter of message with seq:"+Message.seq+" is : "+Temporary_Messages[Message_Tuple].Prepare_counter);
                 
                 } 
-                if (Temporary_Messages[Message_Tuple].Prepare_counter == 3 )
+                if (Temporary_Messages[Message_Tuple].Prepare_counter == 2 )
                 {
                     System.Console.WriteLine("Received 2f+1 prepare message ");
                     state.phase=Phase.commit;
