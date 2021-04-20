@@ -12,10 +12,10 @@ namespace Pbft_demo
     public class Node
     {
         public Configs configs;
-        Server server;
-        Client client;
-        public State state;
-        Timeout timeout;
+        Server server {get; set;}
+        Client client {get; set;}
+        public State state {get; set;}
+        Timeout timeout {get; set;}
         Dictionary<Tuple<int,int>,Temp_Message> Temporary_Messages=new Dictionary<Tuple<int,int>, Temp_Message>();
         static readonly object _locker = new object();
         Dictionary<int,Temp_view_Message> Temporary_View_Change_messages=new Dictionary<int, Temp_view_Message>();
