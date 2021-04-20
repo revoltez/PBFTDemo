@@ -1,15 +1,7 @@
 # PBFT in .NET CORE
-Practical byzantine fault tolerance algorithm that can be used to build consensus in asynchronous networks implemented in .NET CORE
-this is demonstaration of a simple p2p network simulated by Docker where each container has its own ip between 4 nodes to run
-the pbft algorithm therefore reaching consensus 
-
-This algorithm can be used as a consensus algorithm for a blockchain
-
+simple demonstration of the workflow of the Practical byzantine fault tolerance algorithm that can be used to build consensus in asynchronous networks implemented in .NET CORE
 # Crypto
-
 Elliptic curve cryptography is used to create The public/private key pair, signing and verifying messages
-
-
 
 # How to test 
 
