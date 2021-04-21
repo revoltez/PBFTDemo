@@ -1,5 +1,5 @@
 # PBFT in .NET CORE
-simple demonstration of the workflow of the Practical byzantine fault tolerance algorithm that can be used to build consensus in asynchronous networks implemented in .NET CORE
+simple demonstration of the workflow of the Practical byzantine fault tolerance algorithm that can be used to build consensus in partially synchronous networks implemented in .NET CORE
 # Crypto
 Elliptic curve cryptography is used to create The public/private key pair, signing and verifying messages
 
